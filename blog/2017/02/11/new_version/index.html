@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title> SSMI v0.5.1 Released | Shooting Sports Mobile </title>
+
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/font-awesome.css" type="text/css"/>
+  </head>
+  <body>
+    <div class=container>
+      <div class=header>
+          <a href="/index.html">Shooting Sports Mobile</a>
+      </div>
+      <div class=navigation>
+        <ul>
+            <li><a href="/blog.html">blog</a> </li>
+            <li><a href="/archives.html">archive</a> </li>
+            <li><a href="/tags.html">tags</a> </li>
+            <li><a href="/index.html">about</a> </li>
+            <li><a href="/pages/store.html">store</a> </li>
+        </ul>
+      </div>
+      <div class=separator></div>        
+        <div class=body>
+    <h1 class="title"> SSMI v0.5.1 Released</h1>
+    <p class=date> 11 Feb 2017 </p>
+    <p>We've released v0.5.1 of both the server program and the scoring application for <a href="http://idpa.com/">IDPA &trade;</a>. Below is a list of changes:</p>
+<h2>[0.5.1] - 2017-02-11</h2>
+<h3>Added</h3>
+<ul>
+<li>Added "down_value" to server config (defaults to 1.0 2017 rules). Score is calculated as PD * down_value.</li>
+<li>Added option to get results as a webpage or PDF download.</li>
+<li>Added "best of" feature to season standings to allow throwouts.</li>
+<li>Added "XXX" = "Anything Goes" division as a catchall.</li>
+<li>Added import and editor for arbitrary unofficial divisions (think SPD, PCC, BBQ, ETC).</li>
+<li>Added BUG-R, BUG-S to make_model.csv to allow for subdivisions via makes.<ul>
+<li>Use the make/model/caliber feature at signup to identify subdivisions.</li>
+<li>Results are still grouped by division, but you can use this method to identify subdivisions. </li>
+</ul>
+</li>
+<li>Added First Responder (FP) category. We have been using it for years locally and figured others may want to as well.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed scoring formula for Points Down from PD * 0.5 to PD * 1.0 (2017 Rules).</li>
+<li>Changed scoring formula and scoring program to add Flagrant Penalty FP * 10.0 (2017 Rules).</li>
+<li>Changed scoring formula and scoring program to remove Failure To Neutralize FTN * 5.0 (2017 Rules).</li>
+<li>Changed number of strings and rounds for classifier from 7, 4, 3 (90) to 3, 3, 2 (72) (2017 Rules).</li>
+<li>Changed classification times for new classifier (2017 Rules).</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>Remove timezone specification.</li>
+<li>Removed Not For Competition (NFC) Division.</li>
+<li>Removed FTN button from scoring app (2017 Rules).</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>There are a number of breaking changes in this version.</li>
+<li>You can still generate reports from existing matches and classifiers, but any attempt to change (admin/stage edit) and / or re-upload (scoring/upload) existing scores will lead to problems. If you need to do that, you should be using the versions that generated the scores in the first place.</li>
+<li>Category differences from 2017 Rulebook:<ul>
+<li>M6 Competitors may choose ONE of the following to add to their registration...<ul>
+<li>This change is probably to prevent a single shooter from being acknowledged in multiple categories.</li>
+<li>The software currently associates "categories" with shooters, not with entries, because categories do not tend to change match to match.</li>
+<li>If you believe that someone who served their fellow citizens (Military, Law Enforcement, First Responder) and their fellow shooters (Safety Officer) deserves to be recognized as both, continue to check as many categories as are appropriate for each shooter.</li>
+<li>WORKAROUND: If you want to strictly comply with the 2017 rules, simply make sure that each shooter has only one category checked at any given time. The score reports will reflect the category checked at the time the report is generated.</li>
+</ul>
+</li>
+<li>M6.8 Military &amp; M6.9 Law Enforcement are now "active" only. This change is probably to force consistency with the one category change above.<ul>
+<li>We strongly believe that anyone who took an oath to serve their fellow citizens deserves to be recognized no matter how long they were able to serve. As such, our default category descriptions for Military, Law Enforcement, and First Responder will always reflect that. If a Veteran can outshoot an Active Member, then we would like to recognize them.</li>
+<li>WORKAROUND: If you want to strictly comply with the 2017 rules and have your category descriptions consistent with the rulebook there are two options:<ol>
+<li>Edit your categories.csv file before you start the program for the first time and create your database.</li>
+<li>Contact us and we will give you simple and straightforward instructions on how to edit the category descriptions in your existing database. It isn't hard and we are happy to help.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Get it while it's hot! We've been using this software for two (4) years at our local club. It works, it is reliable, and it is up to date. We score matches as fast or faster than on paper with fewer errors. And, it has saved us countless hours scoring matches and distributing results.</p>
+    
+    <p class=tags>Tags
+      <a href="/tag/ssmi.html">ssmi</a>
+      <a href="/tag/release.html">release</a>
+      <a href="/tag/features.html">features</a>
+    </p>
+        </div>
+        
+<div class=footer>
+  <p>Copyright &copy; 2013-2022 James Criner</p>
+  <p> Powered by <a href="http://python.org" target="_blank">Python</a>, <a href="http://pypi.python.org/pypi/pelican/" target="_blank">Pelican</a>, and <a href="http://jinja.pocoo.org" target="_blank">Jinja2</a>.
+  </p> 
+  <div class=social style="font-size: 27px;">
+    <ul>
+      <li><a href="mailto:support@shootingsportsmobile.com" target="_blank"> <i class="icon-envelope icon-large"></i> </a></li>
+<!--
+    <li><a href="/feeds/all.atom.xml" rel="alternate" title="Recent Blog Posts">_<i class="icon-rss icon-large"></i>_</a></li>
+-->
+    </ul>
+  </div>
+</div>    </div>
+  </body>
+</html>

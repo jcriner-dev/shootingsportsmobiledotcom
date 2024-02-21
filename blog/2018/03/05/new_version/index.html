@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title> SSMI v0.5.5 Released | Shooting Sports Mobile </title>
+
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/font-awesome.css" type="text/css"/>
+  </head>
+  <body>
+    <div class=container>
+      <div class=header>
+          <a href="/index.html">Shooting Sports Mobile</a>
+      </div>
+      <div class=navigation>
+        <ul>
+            <li><a href="/blog.html">blog</a> </li>
+            <li><a href="/archives.html">archive</a> </li>
+            <li><a href="/tags.html">tags</a> </li>
+            <li><a href="/index.html">about</a> </li>
+            <li><a href="/pages/store.html">store</a> </li>
+        </ul>
+      </div>
+      <div class=separator></div>        
+        <div class=body>
+    <h1 class="title"> SSMI v0.5.5 Released</h1>
+    <p class=date> 05 Mar 2018 </p>
+    <p>We've released v0.5.5 of both the server program and the scoring application for <a href="http://idpa.com/">IDPA &trade;</a>. Below is a list of changes:</p>
+<h2>[0.5.5] - 2018-03</h2>
+<h3>Added</h3>
+<ul>
+<li>Added PCC and CO as standard divisions.</li>
+<li>Added Admin SQL Result page button to copy results to clipboard.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed classifier signup to have a method (STD, ABBR, PCC). See the IDPA rules regarding classifiers for more information.</li>
+<li>Changed classifier results reports to have a method (STD, ABBR, PCC).</li>
+<li>Changed classifier export to return a ZIP file containing CSV files where the classifiers are grouped by date and method.</li>
+<li>Changed classifier export CSV files to use the current "classifier with scores" template instead of an old format which was still recognized.</li>
+<li>Changed results reports footers based on type.</li>
+<li>Changed Scoring App Support<ul>
+<li>Build process required phonegap-version bump from cli-5.4.1 to cli-6.5.0<ul>
+<li>Minimum Android version = 4.1</li>
+<li>Minimum iOS version = 8.0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Changed Admin and Scoring UI from "Shooter ID" to "IDPA ID" for clarity and consistency.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed bug in CSS where colored backgrounds were covering background images (yellow and dropdown arrow).</li>
+<li>Fixed bug which prevented highlight / copy on Admin SQL Result page.</li>
+</ul>
+    
+    <p class=tags>Tags
+      <a href="/tag/ssmi.html">ssmi</a>
+      <a href="/tag/release.html">release</a>
+      <a href="/tag/features.html">features</a>
+    </p>
+        </div>
+        
+<div class=footer>
+  <p>Copyright &copy; 2013-2022 James Criner</p>
+  <p> Powered by <a href="http://python.org" target="_blank">Python</a>, <a href="http://pypi.python.org/pypi/pelican/" target="_blank">Pelican</a>, and <a href="http://jinja.pocoo.org" target="_blank">Jinja2</a>.
+  </p> 
+  <div class=social style="font-size: 27px;">
+    <ul>
+      <li><a href="mailto:support@shootingsportsmobile.com" target="_blank"> <i class="icon-envelope icon-large"></i> </a></li>
+<!--
+    <li><a href="/feeds/all.atom.xml" rel="alternate" title="Recent Blog Posts">_<i class="icon-rss icon-large"></i>_</a></li>
+-->
+    </ul>
+  </div>
+</div>    </div>
+  </body>
+</html>

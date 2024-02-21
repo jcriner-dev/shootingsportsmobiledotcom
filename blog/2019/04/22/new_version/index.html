@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title> SSMI v2019.1.3 Released | Shooting Sports Mobile </title>
+
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/font-awesome.css" type="text/css"/>
+  </head>
+  <body>
+    <div class=container>
+      <div class=header>
+          <a href="/index.html">Shooting Sports Mobile</a>
+      </div>
+      <div class=navigation>
+        <ul>
+            <li><a href="/blog.html">blog</a> </li>
+            <li><a href="/archives.html">archive</a> </li>
+            <li><a href="/tags.html">tags</a> </li>
+            <li><a href="/index.html">about</a> </li>
+            <li><a href="/pages/store.html">store</a> </li>
+        </ul>
+      </div>
+      <div class=separator></div>        
+        <div class=body>
+    <h1 class="title"> SSMI v2019.1.3 Released</h1>
+    <p class=date> 22 Apr 2019 </p>
+    <p>We've released v2019.1.3 of both the server program and the scoring application for <a href="http://idpa.com/">IDPA &trade;</a>. Below is a list of changes:</p>
+<h2>[2019.1.3] - 2019-04-22</h2>
+<h3>Added</h3>
+<ul>
+<li>Added --version flag.</li>
+<li>Added better name parsing for IDPAHQ status files.</li>
+<li>Added method to convert IDPAHQJSON2019 to IDPAHQCSV2019 (cli only).</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed all html, js, and styl code formatting to prettier.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed bug in admin classifier stage edit when finding method in sql.</li>
+<li>Fixed bug in admin user edit when deleting user.</li>
+<li>Fixed db/divisions.csv to only include XXX since PCC is now official.</li>
+</ul>
+<h2>[2019.1.2] - 2019-04-17</h2>
+<h3>Changed</h3>
+<ul>
+<li>Changed all python code formatting to black.</li>
+<li>Changed db/sql/classifier_from_match.sql to export format consistent with admin classifier export function.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed IDPA classifier exports to have correct fields and values for upload to idpa.com.</li>
+<li>Fixed handling of classification dates when importing IDPA member status files.</li>
+</ul>
+<h2>[2019.1.1] - 2019-04-05</h2>
+<h3>Changed</h3>
+<ul>
+<li>Changed from "semver.org" to "calver.org" versioning.<ul>
+<li>Rationale<ul>
+<li>Project should have been past version 1.0 over five years ago.</li>
+<li>Project did not follow strict semver regarding breaking changes.</li>
+<li>Rules tend to be season oriented.</li>
+</ul>
+</li>
+<li>Format<ul>
+<li>YYYY.version.patch</li>
+<li>YYYY = four (4) digit year.</li>
+<li>version = incremental integer version for the year.<ul>
+<li>Used for feature changes or improvements.</li>
+<li>MAY or MAY NOT be backward compatible with the same YYYY.</li>
+</ul>
+</li>
+<li>patch = incremental integer bugfix.<ul>
+<li>Used for bugfixes only.</li>
+<li>MUST be backwards compatible with the same YYYY.version.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed filename bug in idpahq.py when using --diff-status on the command line.</li>
+</ul>
+<h2>[0.5.8] - 2019-03-04</h2>
+<h3>Added</h3>
+<ul>
+<li>Added match export for upload to new IDPA website.</li>
+<li>Added Database / Shooters / Export IDPA Number feature to get a list of IDPA numbers for member lookup at new IDPA website.</li>
+<li>Added sql file to get a list of IDPA numbers for member lookup at new IDPA website.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Upgrades for CO division and new classifier times.</li>
+<li>Upgrades for PCC division and new classifier methods.</li>
+<li>Changed classifier export format for upload to new IDPA website.</li>
+<li>Changed member status download process to work with new IDPA website.</li>
+<li>Changed member status check / import process to better handle additional file formats.</li>
+<li>Changed "Emergency Contacts" features.<ul>
+<li>Shooter export / import file format now handles emergency contacts.</li>
+<li>Database / Shooters / Export Emergency Contacts</li>
+<li>Allow modification via:<ul>
+<li>Import with custom python script.</li>
+<li>Import Shooters (1 Emergency Phone).</li>
+<li>Shooters (1 Emergency Phone).</li>
+<li>Signup (1 Emergency Phone).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+    
+    <p class=tags>Tags
+      <a href="/tag/ssmi.html">ssmi</a>
+      <a href="/tag/release.html">release</a>
+      <a href="/tag/features.html">features</a>
+    </p>
+        </div>
+        
+<div class=footer>
+  <p>Copyright &copy; 2013-2022 James Criner</p>
+  <p> Powered by <a href="http://python.org" target="_blank">Python</a>, <a href="http://pypi.python.org/pypi/pelican/" target="_blank">Pelican</a>, and <a href="http://jinja.pocoo.org" target="_blank">Jinja2</a>.
+  </p> 
+  <div class=social style="font-size: 27px;">
+    <ul>
+      <li><a href="mailto:support@shootingsportsmobile.com" target="_blank"> <i class="icon-envelope icon-large"></i> </a></li>
+<!--
+    <li><a href="/feeds/all.atom.xml" rel="alternate" title="Recent Blog Posts">_<i class="icon-rss icon-large"></i>_</a></li>
+-->
+    </ul>
+  </div>
+</div>    </div>
+  </body>
+</html>

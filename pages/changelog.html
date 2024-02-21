@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title> CHANGELOG </title>
+
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/font-awesome.css" type="text/css"/>
+  </head>
+  <body>
+    <div class=container>
+      <div class=header>
+          <a href="/index.html">Shooting Sports Mobile</a>
+      </div>
+      <div class=navigation>
+        <ul>
+            <li><a href="/blog.html">blog</a> </li>
+            <li><a href="/archives.html">archive</a> </li>
+            <li><a href="/tags.html">tags</a> </li>
+            <li><a href="/index.html">about</a> </li>
+            <li><a href="/pages/store.html">store</a> </li>
+        </ul>
+      </div>
+      <div class=separator></div>        
+        <div class=body>
+    <div class='page'>
+        <h1> CHANGELOG </h1>
+        <p>Copyright (c) 2013-2022 James Criner<br>
+All notable changes to this project will be documented in this file.</p>
+<h2>[2022.3.2] - 2022-09-01</h2>
+<h3>Added</h3>
+<ul>
+<li>Added chrono feature to server and scoring app.<ul>
+<li>The scoring app works. See the help file.</li>
+<li>The server side will use chrono and equipment check data only if present when uploaded.</li>
+<li>Failed chrono gets a DQ and failed equipment check gets a DNF per IDPA rules.</li>
+<li>Chrono and equipment check are include in:<ul>
+<li>Match reports.</li>
+<li>Match performance promotions.</li>
+<li>Season standings.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>[2022.3.1] - 2022-08-19</h2>
+<h3>Added</h3>
+<ul>
+<li>Added beta chrono feature to server and scoring app.<ul>
+<li>The scoring app works. There is no help yet.</li>
+<li>The server side simply prints out failed chrono or equipment checks when you upload.</li>
+<li>Therefore, you must manually apply DNF or DQ due to chrono or equipment check.</li>
+<li>The plan for integrating chrono on the server side is TBD.</li>
+</ul>
+</li>
+</ul>
+<h2>[2022.2.3] - 2022-08-11</h2>
+<h3>Added</h3>
+<ul>
+<li>Added custom sql files for the 2022 MI State Match.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Change all "Custom Properties" defaults to "Yes".</li>
+<li>Changed update_match_dnf.<ul>
+<li>Match DNF is calculated based on either the specified stage count in the match description, or the most common stage count for all competitors when not specified.</li>
+<li>Previously, it was recalculated when running match results reports or exports.</li>
+<li>Now, it is recalculated on every upload. This allows for chrono or equipment DNF's to be manually applied after all uploading is done.</li>
+</ul>
+</li>
+<li>Changed font size calculation for pdf reports to better use available space with greater than 10 stages.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed most_accurate to require hnt = 0.</li>
+<li>Fixed display of dnf and dq in match results and match exports.</li>
+<li>Fixed bug in patch_db when comparing versions.</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>Scoring versions &gt;= 2022.2.2 are fully compatible with this admin and server version.</li>
+</ul>
+<h2>[2022.2.2] - 2022-06-10</h2>
+<h3>Added</h3>
+<ul>
+<li>Added initial error checking for duplicate IDPA numbers in the database.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed all "Wants Email" defaults to "No".</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>Freeze all software versions for the 2022 MI State Match.</li>
+</ul>
+<h2>[2022.2.1] - 2022-05-01</h2>
+<h3>Changed</h3>
+<ul>
+<li>Changed all python code from python2.7 to python3.7.</li>
+<li>Changed server executable name to:<ul>
+<li>linux = "ssmi"</li>
+<li>darwin = "ssmi.app"</li>
+<li>windows = "ssmi.exe"</li>
+</ul>
+</li>
+<li>Changed match performance promotion formula per 2022 M-18.7 (5 vs 9).</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>Scoring versions &gt;= 2020.1.1 are fully compatible with this admin and server version.</li>
+</ul>
+<h2>[2022.1.1] - 2022-03-01</h2>
+<h3>Added</h3>
+<ul>
+<li>Added new matchsignup properties to db/csv/shooter_properties.csv.</li>
+<li>Added new sql files for major matches to db/sql.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed server build system.<ul>
+<li>Using aws build system for windows.<ul>
+<li>"name": "Windows_Server-2012-R2-English-STIG-Full"</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Changed scoring app build system.<ul>
+<li>Using local build system for android.<ul>
+<li>"cordova": "8.1.2"</li>
+<li>"cordova-android": "^7.1.4"</li>
+<li>"android-minSdkVersion": "19"</li>
+<li>"android-targetSdkVersion": "27"</li>
+<li>Supports android versions &gt;= 4.4</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>Scoring versions &gt;= 2020.1.1 are fully compatible with this admin and server version.</li>
+</ul>
+<h2>[2020.1.X] - Unreleased</h2>
+<h3>Added</h3>
+<ul>
+<li>Added display of local classifications and expiration date to admin shooters tab (available in all future versions.</li>
+</ul>
+<h2>[2020.1.3] - 2020-08-01</h2>
+<h3>Added</h3>
+<ul>
+<li>Added "--verbose" flag to enable debug logging to file and screen.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed to modular logging in a separate module and added debugging.</li>
+<li>Disabled automatic download of IDPA status files due to SSL certificate and login limitations. Use the "database / shooters / export idpa numbers" feature to get a list of idpa numbers and manually download an IDPA status file from idpa.com.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed all CSV readers to handle difference in Windows "isinstance(x, file)" when checking and importing IDPA status files.</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>Scoring version 2020.1.1 is fully compatible with this admin and server version.</li>
+</ul>
+<h2>[2020.1.2] - 2020-04-06</h2>
+<h3>Added</h3>
+<ul>
+<li>Added match report based on overall ranking (feature request).</li>
+</ul>
+<h2>[2020.1.1] - 2020-03-09</h2>
+<h3>Changed</h3>
+<ul>
+<li>Changed Abbreviated Classsifier times for 2020.</li>
+<li>Changed all classifications in all active divisions to UN. Done to handle 2020 removal of Universal classifications. Download and import current classifications from IDPA.</li>
+</ul>
+<h2>[2019.1.4] - 2019-08-26</h2>
+<h3>Added</h3>
+<ul>
+<li>Added sql files for mailman list checking.</li>
+<li>Added sql files for safety officer list generation.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fix datetime_utils isoparse timezone offset parsing bug.</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>Admin and scoring versions 2019.1.3 are fully compatible with this server version.</li>
+</ul>
+<h2>[2019.1.3] - 2019-04-22</h2>
+<h3>Added</h3>
+<ul>
+<li>Added --version flag.</li>
+<li>Added better name parsing for IDPAHQ status files.</li>
+<li>Added method to convert IDPAHQJSON2019 to IDPAHQCSV2019 (cli only).</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed all html, js, and styl code formatting to prettier.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed bug in admin classifier stage edit when finding method in sql.</li>
+<li>Fixed bug in admin user edit when deleting user.</li>
+<li>Fixed db/divisions.csv to only include XXX since PCC is now official.</li>
+</ul>
+<h2>[2019.1.2] - 2019-04-17</h2>
+<h3>Changed</h3>
+<ul>
+<li>Changed all python code formatting to black.</li>
+<li>Changed db/sql/classifier_from_match.sql to export format consistent with admin classifier export function.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed IDPA classifier exports to have correct fields and values for upload to idpa.com.</li>
+<li>Fixed handling of classification dates when importing IDPA member status files.</li>
+</ul>
+<h2>[2019.1.1] - 2019-04-05</h2>
+<h3>Changed</h3>
+<ul>
+<li>Changed from "semver.org" to "calver.org" versioning.<ul>
+<li>Rationale<ul>
+<li>Project should have been past version 1.0 over five years ago.</li>
+<li>Project did not follow strict semver regarding breaking changes.</li>
+<li>Rules tend to be season oriented.</li>
+</ul>
+</li>
+<li>Format<ul>
+<li>YYYY.version.patch</li>
+<li>YYYY = four (4) digit year.</li>
+<li>version = incremental integer version for the year.<ul>
+<li>Used for feature changes or improvements.</li>
+<li>MAY or MAY NOT be backward compatible with the same YYYY.</li>
+</ul>
+</li>
+<li>patch = incremental integer bugfix.<ul>
+<li>Used for bugfixes only.</li>
+<li>MUST be backwards compatible with the same YYYY.version.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed filename bug in idpahq.py when using --diff-status on the command line.</li>
+</ul>
+<h2>[0.5.8] - 2019-03-04</h2>
+<h3>Added</h3>
+<ul>
+<li>Added match export for upload to new IDPA website.</li>
+<li>Added Database / Shooters / Export IDPA Number feature to get a list of IDPA numbers for member lookup at new IDPA website.</li>
+<li>Added sql file to get a list of IDPA numbers for member lookup at new IDPA website.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Upgrades for CO division and new classifier times.</li>
+<li>Upgrades for PCC division and new classifier methods.</li>
+<li>Changed classifier export format for upload to new IDPA website.</li>
+<li>Changed member status download process to work with new IDPA website.</li>
+<li>Changed member status check / import process to better handle additional file formats.</li>
+<li>Changed "Emergency Contacts" features.<ul>
+<li>Shooter export / import file format now handles emergency contacts.</li>
+<li>Database / Shooters / Export Emergency Contacts</li>
+<li>Allow modification via:<ul>
+<li>Import with custom python script.</li>
+<li>Import Shooters (1 Emergency Phone).</li>
+<li>Shooters (1 Emergency Phone).</li>
+<li>Signup (1 Emergency Phone).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>[0.5.7-dev] - Unreleased</h2>
+<h3>Changed</h3>
+<ul>
+<li>Upgrade bottle from local version to 0.12.13</li>
+<li>Upgrade bottle_sqlite from local version to 0.1.3</li>
+<li>Change web server from local rocket 1.2.4 to waitress 1.1.0</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>Upgrade pyinstaller from git pyinstaller_fcd7b9a17c026efe4533c5d4b92662cdcc6b9b3c to pypi 3.3.1</li>
+</ul>
+<h2>[0.5.6] - 2018-04</h2>
+<h3>Added</h3>
+<ul>
+<li>Added beta "Emergency Contacts" features.<ul>
+<li>Currently imported with custom python script.</li>
+<li>Database / Shooters / Export Emergency Contacts</li>
+<li>Import (future)</li>
+<li>Shooters (future)</li>
+<li>Signup (future)</li>
+</ul>
+</li>
+<li>Fixed display of optional divisions when the list is empty.</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>The scoring app remains at 0.5.5 and is fully compatible.</li>
+</ul>
+<h2>[0.5.5] - 2018-03</h2>
+<h3>Added</h3>
+<ul>
+<li>Added PCC and CO as standard divisions.</li>
+<li>Added Admin SQL Result page button to copy results to clipboard.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed classifier signup to have a method (STD, ABBR, PCC). See the IDPA rules regarding classifiers for more information.</li>
+<li>Changed classifier results reports to have a method (STD, ABBR, PCC).</li>
+<li>Changed classifier export to return a ZIP file containing CSV files where the classifiers are grouped by date and method.</li>
+<li>Changed classifier export CSV files to use the current "classifier with scores" template instead of an old format which was still recognized.</li>
+<li>Changed results reports footers based on type.</li>
+<li>Changed Scoring App Support<ul>
+<li>Build process required phonegap-version bump from cli-5.4.1 to cli-6.5.0<ul>
+<li>Minimum Android version = 4.1</li>
+<li>Minimum iOS version = 8.0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Changed Admin and Scoring UI from "Shooter ID" to "IDPA ID" for clarity and consistency.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed bug in CSS where colored backgrounds were covering background images (yellow and dropdown arrow).</li>
+<li>Fixed bug which prevented highlight / copy on Admin SQL Result page.</li>
+</ul>
+<h2>[0.5.4] - 2017-05-09</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Updated server code which downloads from idpa.com to be consistent with Rangelog changes (now using https for login).</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>Both the admin interface and scoring app remain at 0.5.3 and are fully compatible.</li>
+</ul>
+<h2>[0.5.3] - 2017-04-07</h2>
+<h3>Changed</h3>
+<ul>
+<li>Changed all versions to 0.5.3 for consistency.</li>
+<li>Changed match performance promotions to include DNF and DQ per IDPA Match Admin v1d 2017-03-21 M-4.1.</li>
+<li>Changed match performance promotions to be a multiple of 9 per IDPA Match Admin v1d 2017-03-21 M-4.1.</li>
+</ul>
+<h2>[0.5.2] - 2017-03-16</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed networking bug in scoring app on Android.</li>
+<li>Fixed server code converting booleans to integers (code -&gt; database) and vice versa.</li>
+<li>Fixed server code deleting / editing match stages.</li>
+</ul>
+<h2>[0.5.1] - 2017-02-11</h2>
+<h3>Added</h3>
+<ul>
+<li>Added "down_value" to server config (defaults to 1.0 2017 rules). Score is calculated as PD * down_value.</li>
+<li>Added option to get results as a webpage or PDF download.</li>
+<li>Added "best of" feature to season standings to allow throwouts.</li>
+<li>Added "XXX" = "Anything Goes" division as a catchall.</li>
+<li>Added import and editor for arbitrary unofficial divisions (think SPD, PCC, BBQ, ETC).</li>
+<li>Added BUG-R, BUG-S to make_model.csv to allow for subdivisions via makes.<ul>
+<li>Use the make/model/caliber feature at signup to identify subdivisions.</li>
+<li>Results are still grouped by division, but you can use this method to identify subdivisions. </li>
+</ul>
+</li>
+<li>Added First Responder (FP) category. We have been using it for years locally and figured others may want to as well.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed scoring formula for Points Down from PD * 0.5 to PD * 1.0 (2017 Rules).</li>
+<li>Changed scoring formula and scoring program to add Flagrant Penalty FP * 10.0 (2017 Rules).</li>
+<li>Changed scoring formula and scoring program to remove Failure To Neutralize FTN * 5.0 (2017 Rules).</li>
+<li>Changed number of strings and rounds for classifier from 7, 4, 3 (90) to 3, 3, 2 (72) (2017 Rules).</li>
+<li>Changed classification times for new classifier (2017 Rules).</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>Remove timezone specification.</li>
+<li>Removed Not For Competition (NFC) Division.</li>
+<li>Removed FTN button from scoring app (2017 Rules).</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>There are a number of breaking changes in this version.</li>
+<li>You can still generate reports from existing matches and classifiers, but any attempt to change (admin/stage edit) and / or re-upload (scoring/upload) existing scores will lead to problems. If you need to do that, you should be using the versions that generated the scores in the first place.</li>
+<li>Category differences from 2017 Rulebook:<ul>
+<li>M6 Competitors may choose ONE of the following to add to their registration...<ul>
+<li>This change is probably to prevent a single shooter from being acknowledged in multiple categories.</li>
+<li>The software currently associates "categories" with shooters, not with entries, because categories do not tend to change match to match.</li>
+<li>If you believe that someone who served their fellow citizens (Military, Law Enforcement, First Responder) and their fellow shooters (Safety Officer) deserves to be recognized as both, continue to check as many categories as are appropriate for each shooter.</li>
+<li>WORKAROUND: If you want to strictly comply with the 2017 rules, simply make sure that each shooter has only one category checked at any given time. The score reports will reflect the category checked at the time the report is generated.</li>
+</ul>
+</li>
+<li>M6.8 Military &amp; M6.9 Law Enforcement are now "active" only. This change is probably to force consistency with the one category change above.<ul>
+<li>We strongly believe that anyone who took an oath to serve their fellow citizens deserves to be recognized no matter how long they were able to serve. As such, our default category descriptions for Military, Law Enforcement, and First Responder will always reflect that. If a Veteran can outshoot an Active Member, then we would like to recognize them.</li>
+<li>WORKAROUND: If you want to strictly comply with the 2017 rules and have your category descriptions consistent with the rulebook there are two options:<ol>
+<li>Edit your categories.csv file before you start the program for the first time and create your database.</li>
+<li>Contact us and we will give you simple and straightforward instructions on how to edit the category descriptions in your existing database. It isn't hard and we are happy to help.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>[0.4.6] - 2016-10-24</h2>
+<h3>Changed</h3>
+<ul>
+<li>"Classified" for season standings now means that the shooter complies with the IDPA rules on classification frequency as of the season end date.</li>
+<li>Scoring<ul>
+<li>Bumped phonegap-version from 3.6.3 to cli-5.4.1<ul>
+<li>Changed config.xml and index.html to work with new style plugins (device, splashscreen, statusbar)</li>
+<li>Minimum Android version = 4.0</li>
+<li>Minimum iOS version 6.0 (last version to support iPhone 3GS)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Updated copyright, license, and documentation.</li>
+<li>Changed titles on results reports.</li>
+</ul>
+<h2>[0.4.5] - 2016-04-08</h2>
+<h3>Changed</h3>
+<ul>
+<li>Signup now prefills shooter classifications instead of previous entries. This was done because incorrect entries were being propagated for some people.</li>
+<li>Signup and Scoring / Squad / Add from Device now are "aware" of shooter classifications. Any division change will change the class to the "known" class. You can override class if it is incorrect.</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li>The changes above were implemented because certain shooters were repeatedly entering matches in incorrect divisions / classes.</li>
+</ul>
+<h2>[0.4.4] - 2015-07-15</h2>
+<h3>Changed</h3>
+<ul>
+<li>Updated signup messages.</li>
+<li>Updated font size for larger devices.</li>
+</ul>
+<h2>[0.4.0] - 2015-01-01</h2>
+<h3>Added</h3>
+<ul>
+<li>Added match performance promotion feature.</li>
+<li>Added custom shooter properties (Shirt, Lunch, etc).</li>
+<li>Added match report by stage.</li>
+<li>Added capability to change "Shooter Agree?" message in scoring app.</li>
+<li>Added random alias to new shooters created in scoring app.</li>
+<li>Added option to prevent updating existing shooters when importing.</li>
+<li>Added license management via web interface.</li>
+<li>Added REV &amp; CCP divisions (2015 Rules).</li>
+<li>Added classification in BUG division (2015 Rules).</li>
+<li>Added embedded device support.<ul>
+<li>Device becomes a wifi hotspot on boot.</li>
+<li>Accessible over wifi.<ul>
+<li>via fixed ip address.</li>
+<li>via name if clients support Zeroconf networking.<ul>
+<li>iOS, Linux, Mac out of the box.</li>
+<li>Windows requires Apple Bonjour installed.</li>
+<li>Android 4.1 does not work.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Accessible over ethernet.<ul>
+<li>via dhcp ip address.</li>
+<li>via name if clients support Zeroconf networking.<ul>
+<li>iOS, Linux, Mac out of the box.</li>
+<li>Windows requires Apple Bonjour installed.</li>
+<li>Android 4.1 does not work.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IDPA functions work when ethernet is plugged in to internet router.</li>
+<li>Software build system for embedded devices.</li>
+<li>Run ssmi_server on boot.</li>
+<li>Cron job keeps ssmi_server running if process dies unexpectedly.</li>
+<li>Added feature detection for embedded device and real time clock.</li>
+<li>Added automatic clock syncing to client on login.</li>
+<li>Added software reboot / shutdown feature.<ul>
+<li>Required to safely reboot / shutdown embedded devices without a power off button.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed authorization functions to allow license management.</li>
+<li>Changed software update function.</li>
+<li>Changed import / export / IDPA functions to handle division changes.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed login cookie bugs.</li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li>Disabled further classifications in ESR &amp; SSR divisions (2015 Rules).</li>
+</ul>
+<h3>Security</h3>
+<ul>
+<li>Require login credentials for downloading IDPA status file.</li>
+</ul>
+<h2>[0.3.0] - 2013-01-01</h2>
+<h3>Other</h3>
+<ul>
+<li>Used for 2013 &amp; 2104.</li>
+</ul>
+    </div>
+        </div>
+        
+<div class=footer>
+  <p>Copyright &copy; 2013-2022 James Criner</p>
+  <p> Powered by <a href="http://python.org" target="_blank">Python</a>, <a href="http://pypi.python.org/pypi/pelican/" target="_blank">Pelican</a>, and <a href="http://jinja.pocoo.org" target="_blank">Jinja2</a>.
+  </p> 
+  <div class=social style="font-size: 27px;">
+    <ul>
+      <li><a href="mailto:support@shootingsportsmobile.com" target="_blank"> <i class="icon-envelope icon-large"></i> </a></li>
+<!--
+    <li><a href="/feeds/all.atom.xml" rel="alternate" title="Recent Blog Posts">_<i class="icon-rss icon-large"></i>_</a></li>
+-->
+    </ul>
+  </div>
+</div>    </div>
+  </body>
+</html>
